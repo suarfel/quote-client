@@ -1,0 +1,48 @@
+.mainConfigure {
+  position: relative;
+}
+.mainLayoutNavigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 5rem;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+.dropMain {
+  position: fixed;
+  top: 5rem;
+  width: 100%;
+  background-color: rgba(242, 247, 245, 0.8);
+  z-index: 1;
+}
+
+.mainPosition {
+  position: absolute;
+  z-index: 0;
+  top: 10rem;
+  width: 100%;
+  min-height: 77vh;
+}
+.minPos{
+    margin-bottom: 10rem;
+}
+.mainFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  background-color: black;
+  width: 100%;
+  z-index: 1;
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
+  background-color: white;
+  min-height: 5rem;
+  
+}

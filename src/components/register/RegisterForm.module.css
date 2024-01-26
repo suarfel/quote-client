@@ -1,0 +1,67 @@
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+}
+
+.control {
+}
+.control label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.control input {
+  text-indent: 20px;
+  height: 35px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.control input:focus {
+  outline-style: none;
+  background-color: rgb(242, 238, 238);
+}
+.invalidControl {
+}
+.invalidControl label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.invalidControl input {
+  text-indent: 20px;
+  height: 35px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.invalidControl input:focus {
+  outline-style: none;
+  background-color: rgb(242, 238, 238);
+}
+.formError {
+  padding-left: 0.5rem;
+  color: rgb(233, 69, 69);
+  font-size: small;
+}
+.signupUser button {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  height: 2.5rem;
+  color: white;
+  background-color: #0fa958;
+  width: 100%;
+  border-radius: 12px;
+  border-style: none;
+  padding: 0.5rem;
+}
+.signupUser button:hover {
+  background-color: #87c6a4;
+}
+
+

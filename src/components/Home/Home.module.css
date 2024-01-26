@@ -1,0 +1,16 @@
+
+.layoutHam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 2rem;
+}
+.Layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.LayoutNavigation{
+     
+}
+ 

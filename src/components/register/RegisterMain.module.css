@@ -1,0 +1,33 @@
+.registerMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+  column-gap: 8rem;
+  align-items: center;
+  justify-content: center;
+}
+.registerMainBody {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.registerTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.registerWithGoogle {
+  align-self: start;
+}
+.haveAccount {
+  font-size: 0.9rem;
+}
+.haveAccount a {
+  text-decoration: none;
+  color: #0fa958;
+  font-weight: bold;
+}
+.haveAccount a:hover{
+    color: #87c6a4;
+  }
+  

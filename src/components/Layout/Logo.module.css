@@ -1,0 +1,41 @@
+.mainNavigationLogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mainName {
+  /* margin-bottom: 0.7rem; */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0fa958;
+  align-items: center;
+}
+.navigationLogo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  margin: 0;
+  padding: 0;
+}
+.theIcon{
+  margin: 0;
+  padding: 0;
+}
+ 
+
+@media(max-width : 910px){
+  .mainName{
+    font-size: 1.6rem;
+  }
+}
+
+@media(max-width : 290px){
+  .mainName {
+    font-size: 1rem;
+
+  }
+  
+
+}

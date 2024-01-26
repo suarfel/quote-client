@@ -1,0 +1,19 @@
+
+.layoutHam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.Layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0rem 1rem;
+}
+
+@media (max-width: 230px) {
+    .layoutHam{
+      color:  white;
+    }
+  }
