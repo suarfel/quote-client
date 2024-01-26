@@ -93,21 +93,19 @@ const RegisterForm = () => {
           <label htmlFor="password">Password</label>
           <br />
           <input
-            type="text"
+            type="password"
             id="password"
             value={enteredPassword}
             onChange={passwordChangeHandler}
             onBlur={passwordBlurHandler}
           />
           {passwordError && (
-            <div className={classes.formError}>
-              Please add valid password
-            </div>
+            <div className={classes.formError}>Please add valid password</div>
           )}
         </div>
         <div className={classes.signupUser}>
           <button>SIGN UP</button>
-        </div> 
+        </div>
       </form>
     </div>
   );

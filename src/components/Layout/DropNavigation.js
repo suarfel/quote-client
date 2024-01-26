@@ -47,7 +47,7 @@ const DropNavigation = () => {
           </NavLink>
         </li>
         <div className={classes.mainNavigationButtons}>
-          <NavLink to='register'>
+          <NavLink to='login'>
             <button>SIGN IN</button>
           </NavLink>
           <NavLink to='register'>

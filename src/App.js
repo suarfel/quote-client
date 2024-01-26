@@ -11,17 +11,18 @@ import {
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import DropNavigation from "./components/Layout/DropNavigation";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
   return (
     <Router>
       <Main>
         <Routes>
-          <Route path="/" element={<Navigate replace to="home" />}/>
-          <Route path="/register" element={<SignUpPage />}/>
-          <Route path="home"  element={<HomePage />}/>
+          <Route path="/" element={<Navigate replace to="home" />} />
+          <Route path="/register" element={<SignUpPage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="/login" element={<SignInPage />} />
           <Route path="*" element={<Navigate replace to="home" />} />
-
         </Routes>
       </Main>
     </Router>
