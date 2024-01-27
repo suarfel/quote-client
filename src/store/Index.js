@@ -1,8 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit"
-import navReducer from './home';
+import { configureStore } from "@reduxjs/toolkit";
+import navReducer from "./home";
+import authReducer from "./auth";
 
 const store = configureStore({
-    reducer : {nav : navReducer}
-})
+  reducer: { nav: navReducer, auth: authReducer },
+});
 
-export default store;  
+export default store;

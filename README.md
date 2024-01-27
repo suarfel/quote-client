@@ -16,7 +16,6 @@ This React Quote App is a simple web application that allows users to explore an
 - CSS3
 
 ## 🏁 Getting Started
-
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/react-quote-app.git
