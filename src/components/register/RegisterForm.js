@@ -3,7 +3,7 @@ import UserForm from "../../hooks/userInput";
 import classes from "./RegisterForm.module.css";
 import { useState } from "react";
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
   const width = useSelector((state) => state.nav.width);
   const {
     enteredValue: enteredName,
@@ -49,9 +49,17 @@ const RegisterForm = () => {
     event.preventDefault();
     console.log(isFormValid);
     if (isFormValid) {
-      console.log(enteredName);
-      console.log(enteredEmail);
-      console.log(enteredPassword);
+      props.onRegisterUser({
+        firstName: "surafel",
+        lastName: "Getahun",
+        userName: enteredName,
+        email: enteredEmail,
+        password: enteredPassword
+      });
+
+      nameReset();
+      emailReset();
+      passwordReset();
     }
   };
   return (

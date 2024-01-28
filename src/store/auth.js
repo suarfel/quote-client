@@ -9,13 +9,13 @@ const authReducer = createSlice({
   initialState: initialAuthState,
   reducers: {
     logIn(state, action) {
-      (state.token = action.payload),
-        (state.isLoggedIn = !!action.payload),
+      state.token = action.payload;
+        state.isLoggedIn = !!action.payload;
         localStorage.setItem("token", action.payload);
     },
     logOut(state) {
-      (state.token = null),
-        (state.isLoggedIn = false),
+      state.token = null;
+        state.isLoggedIn = false;
         localStorage.removeItem("token");
     },
   },
