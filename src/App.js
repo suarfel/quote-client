@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
-import DropNavigation from "./components/Layout/DropNavigation";
 import SignInPage from "./pages/SignInPage";
 import { useSelector } from "react-redux";
 import UserPage from "./pages/UserPage";
@@ -21,12 +20,19 @@ function App() {
     <Router>
       <Main>
         <Routes>
-          <Route path="/" element={<Navigate replace to="home" />} />
+          {!isLoggedIn && (
+            <Route path="/" element={<Navigate replace to="home" />} />
+          )}
           {isLoggedIn && <Route path="/user" element={<UserPage />} />}
           <Route path="/register" element={<SignUpPage />} />
           <Route path="home" element={<HomePage />} />
           <Route path="/login" element={<SignInPage />} />
-          <Route path="*" element={<Navigate replace to="home" />} />
+          {!isLoggedIn && (
+            <Route path="*" element={<Navigate replace to="home" />} />
+          )}
+          {isLoggedIn && (
+            <Route path="*" element={<Navigate replace to="user" />} />
+          )}
         </Routes>
       </Main>
     </Router>

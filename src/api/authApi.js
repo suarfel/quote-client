@@ -15,23 +15,11 @@ export async function Register(userData) {
     },
   });
 
-  try {
-    if (response.ok) {
-      const data = await response.json();
-    } else {
-      const errorData = await response.json();
-      let errorMessage = "Authentication Failed";
+  const data = await response.json();
 
-      if (errorData && errorData.error && errorData.error.errorMessage) {
-        errorMessage = errorData.error.errorMessage;
-      }
-
-      alert(errorMessage);
-    }
-  } catch (err) {
-    alert(err.errorMessage);
+  if (!response.ok) {
+    throw new Error(data.message || "Could not create song.");
   }
-
   return null;
 }
 

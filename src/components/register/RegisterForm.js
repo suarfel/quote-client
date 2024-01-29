@@ -2,9 +2,10 @@ import { useSelector } from "react-redux";
 import UserForm from "../../hooks/userInput";
 import classes from "./RegisterForm.module.css";
 import { useState } from "react";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 const RegisterForm = (props) => {
-  const width = useSelector((state) => state.nav.width);
+
   const {
     enteredValue: enteredName,
     valueChangeHandler: nameChangeHandler,
@@ -47,11 +48,10 @@ const RegisterForm = (props) => {
 
   const registerUser = (event) => {
     event.preventDefault();
-    console.log(isFormValid);
     if (isFormValid) {
       props.onRegisterUser({
-        firstName: "surafel",
-        lastName: "Getahun",
+        firstName: "radgfdgfel",
+        lastName: "Getadfghun",
         userName: enteredName,
         email: enteredEmail,
         password: enteredPassword
@@ -112,7 +112,7 @@ const RegisterForm = (props) => {
           )}
         </div>
         <div className={classes.signupUser}>
-          <button>SIGN UP</button>
+          <button disabled={!isFormValid}>SIGN UP</button>
         </div>
       </form>
     </div>

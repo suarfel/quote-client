@@ -27,7 +27,12 @@
   color: #0fa958;
   font-weight: bold;
 }
-.haveAccount a:hover{
-    color: #87c6a4;
-  }
-  
+.haveAccount a:hover {
+  color: #87c6a4;
+}
+
+.modalOverlay {
+ 
+}
+
+

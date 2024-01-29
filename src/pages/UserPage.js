@@ -1,5 +1,11 @@
+import LoadingSpinner from "../components/UI/LoadingSpinner";
+
 const UserPage = () => {
-return (<div></div>);
-}
+  return (
+    <div>
+      <LoadingSpinner />
+    </div>
+  );
+};
 
 export default UserPage;

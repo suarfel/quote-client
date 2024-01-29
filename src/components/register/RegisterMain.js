@@ -3,24 +3,28 @@ import login from "../../images/login.png";
 import { NavLink } from "react-router-dom";
 import SignWithGoogle from "./SignWithGoogle";
 import RegisterForm from "./RegisterForm";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Register } from "../../api/authApi";
-import {useEffect} from 'react';
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useHttp from "../../hooks/userHttp";
+import LoadingSpinner from "../UI/LoadingSpinner";
+import { navActions } from "../../store/home";
 
 const RegisterMain = () => {
-  const { sendRequest,status } = useHttp(Register);
+  const { sendRequest, status, error } = useHttp(Register);
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
-    if (status === "completed") {
+    if (status === "completed" && error === null) {
       navigate("/login");
     }
   });
 
   const registerUserHandler = (user) => {
     sendRequest(user);
-   };
+  };
 
   const width = useSelector((state) => state.nav.width);
   return (
@@ -39,6 +43,8 @@ const RegisterMain = () => {
         <div className={classes.haveAccount}>
           Already have an accout? <NavLink to="/login">Login</NavLink>
         </div>
+
+        {status === "pending" && <LoadingSpinner />}
       </div>
       <div className={classes.registerImage}>
         {width > 500 && <img src={login} style={{ width: "30rem" }} />}

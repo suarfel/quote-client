@@ -34,12 +34,8 @@ const useHttp = (requestFunction, startWithPending = false) => {
   const sendRequest = useCallback(
     async function (requestData) {
       dispatch({ type: "SEND" });
-
-
       try {
-        console.log(requestData)
-        const responseData = await requestFunction(requestData);
-        
+         const responseData = await requestFunction(requestData);
         dispatch({ type: "SUCCESS", responseData });
       } catch (error) {
         dispatch({

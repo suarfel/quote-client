@@ -64,22 +64,28 @@ form {
   background-color: #87c6a4;
 }
 
-@media(max-width : 400px){
+@media (max-width: 400px) {
   .signGoogleButton {
     width: 13rem;
-}
-.control input{
-  width: 15rem;
-}
-.invalidControl input{
-  width: 15rem;
-}
+  }
+  .control input {
+    width: 15rem;
+  }
+  .invalidControl input {
+    width: 15rem;
+  }
 }
 
-@media(max-width : 310px){
+@media (max-width: 310px) {
   .signGoogleButton {
     width: 10rem;
-}
+  }
 }
 
-
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  cursor: not-allowed;
+  color: white;
+  border-color: #ccc;
+}
