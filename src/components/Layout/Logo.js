@@ -16,9 +16,9 @@ const Logo = () => {
   return (
     <div className={classes.mainNavigationLogo}>
       <div className={classes.navigationLogo}>
-        {width > 910 && <Icon  className={classes.theIcon} icon="ph:book-fill" color="#0fa958" fontSize={   27 } /> }
+        {/* {width > 910 && <Icon  className={classes.theIcon} icon="ph:book-fill" color="#0fa958" fontSize={   27 } /> }
         {(width <= 910 && width > 290) && <Icon icon="ph:book-fill" color="#0fa958" fontSize={  23 } /> }
-        {width < 290 && <Icon icon="ph:book-fill" color="#0fa958" fontSize={   15 } /> }
+        {width < 290 && <Icon icon="ph:book-fill" color="#0fa958" fontSize={   15 } /> } */}
       </div>
       <div className={classes.mainName}>Quote</div>
     </div>

@@ -1,0 +1,37 @@
+.landingDescriptionMain {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.landingDescriptionSlogan {
+  width: 8rem;
+  height: 2.7rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.landingDescriptionSloganDescription {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.landingDescriptionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 2.7rem;
+  background-color: #0fa958;
+  color: white;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.landingDescriptionButton:hover {
+    background-color: #87c6a4;
+}

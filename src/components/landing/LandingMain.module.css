@@ -1,0 +1,70 @@
+.landingMain{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+
+.landingDescriptionOne{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.landingDescriptionleft{
+    flex-basis: 40%;
+}
+
+.landingDescriptionTwoDiver{
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.landingDescriptionTwo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.landingDescriptionTwoTitle{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.landingDescriptionTwoParagraph{
+    flex-basis: 70%;
+}
+.landingDescriptionThree{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap ;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 2rem;
+}
+
+@media(max-width : 970px){
+
+.landingDescriptionleft{
+    flex-basis: 70%;
+}
+}
+
+@media(max-width : 560px){
+    .landingDescriptionleft{
+        flex-basis: 80%;
+    }
+    .homePhoto img{
+        width: 25rem;
+        height: 20rem;
+    }
+
+    .landingDescriptionTwoParagraph{
+        flex-basis: 80%;
+    }
+}

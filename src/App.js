@@ -13,6 +13,7 @@ import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import { useSelector } from "react-redux";
 import UserPage from "./pages/UserPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -25,7 +26,7 @@ function App() {
           )}
           {isLoggedIn && <Route path="/user" element={<UserPage />} />}
           <Route path="/register" element={<SignUpPage />} />
-          <Route path="home" element={<HomePage />} />
+          <Route path="home" element={<LandingPage/>} />
           <Route path="/login" element={<SignInPage />} />
           {!isLoggedIn && (
             <Route path="*" element={<Navigate replace to="home" />} />

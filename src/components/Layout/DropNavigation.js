@@ -2,7 +2,13 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import classes from "./DropNavigation.module.css";
 import NavBar from "./NavBar";
+import { useDispatch } from "react-redux";
+import { navActions } from "../../store/home";
 const DropNavigation = () => {
+  const dispatch = useDispatch();
+  const onHamTouched = () => {
+    dispatch(navActions.changeNav());
+  };
   return (
     <nav className={classes.nav}>
       <ul>
@@ -12,6 +18,7 @@ const DropNavigation = () => {
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
+            onClick={onHamTouched}
           >
             Home
           </NavLink>
@@ -22,6 +29,7 @@ const DropNavigation = () => {
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
+            onClick={onHamTouched}
           >
             About Us
           </NavLink>
@@ -32,6 +40,7 @@ const DropNavigation = () => {
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
+            onClick={onHamTouched}
           >
             Famous Quote
           </NavLink>
@@ -42,15 +51,16 @@ const DropNavigation = () => {
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
+            onClick={onHamTouched}
           >
             Contact Us
           </NavLink>
         </li>
         <div className={classes.mainNavigationButtons}>
-          <NavLink to='login'>
+          <NavLink to="login" onClick={onHamTouched}>
             <button>SIGN IN</button>
           </NavLink>
-          <NavLink to='register'>
+          <NavLink to="register" onClick={onHamTouched}>
             <button>SIGN UP</button>
           </NavLink>
         </div>

@@ -1,26 +1,31 @@
-.logInMain{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 5rem;
-    row-gap: 3rem;
-    justify-content: center;
-    align-items: center;
+.logInMainTop {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
 }
-.logInMainTitle{
-    font-size: 1.5rem;
-    font-weight: 500;
+.logInMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 5rem;
+  row-gap: 3rem;
+  justify-content: center;
+  align-items: center;
 }
-.logInMainRight{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+.logInMainTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.logInMainRight {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 .dontHaveAccount {
-    font-size: 0.9rem;
-  }
+  font-size: 0.9rem;
+}
 .dontHaveAccount a {
-    text-decoration: none;
-    color: #0fa958;
-    font-weight: bold;
-  }
+  text-decoration: none;
+  color: #0fa958;
+  font-weight: bold;
+}

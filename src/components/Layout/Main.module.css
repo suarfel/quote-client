@@ -7,6 +7,7 @@
   justify-content: center;
   height: 5rem;
   border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
@@ -28,8 +29,8 @@
   width: 100%;
   min-height: 77vh;
 }
-.minPos{
-    margin-bottom: 10rem;
+.minPos {
+  margin-bottom: 10rem;
 }
 .mainFooter {
   display: flex;
@@ -44,5 +45,4 @@
   border-top: 1px solid rgb(0, 0, 0, 0.2);
   background-color: white;
   min-height: 5rem;
-  
 }

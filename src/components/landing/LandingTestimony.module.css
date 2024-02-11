@@ -1,0 +1,19 @@
+.landingTestimony{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 8px rgb(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    width: 20rem;
+    padding: 1rem;
+
+}
+.landingTestimonyIcon{
+    font-size: 5rem;
+}
+.landingTestimonyTitle{
+    font-size: large;
+    font-weight: 630;
+    margin-bottom: 0.5rem;
+}

@@ -1,3 +1,8 @@
+.registerMainTop{
+  display:  flex;
+  flex-direction: column;
+  row-gap: 5rem;
+}
 .registerMain {
   display: flex;
   flex-direction: row;
