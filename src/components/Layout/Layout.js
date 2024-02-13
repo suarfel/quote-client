@@ -10,6 +10,7 @@ import Footer from "./Footer";
 
 const Layout = () => {
   const width = useSelector((state) => state.nav.width);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const isDrawing = useSelector((state) => state.nav.isHamTouched);
 
@@ -26,7 +27,7 @@ const Layout = () => {
       {width < 640 && (
         <div className={classes.layoutHam}>
           <Logo />
-          <NavBar />
+          {!isLoggedIn && <NavBar />}
         </div>
       )}
     </div>

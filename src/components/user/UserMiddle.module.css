@@ -1,0 +1,10 @@
+.userMiddle {
+  display: flex;
+  flex-direction: column;
+}
+
+.userMiddleLatest {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-left: 2rem;
+}

@@ -5,14 +5,26 @@ import { useNavigate } from "react-router-dom";
 import { authActions } from "../../store/auth";
 import { navActions } from "../../store/home";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import useHttp from "../../hooks/userHttp";
+import { Login } from "../../api/authApi";
+import { useEffect } from "react";
 
 const url = "http://localhost:5181/api/auth/login";
 
 const LogInForm = () => {
-  const isLoading = useSelector((state) => state.nav.isLoading);
+  const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
+
+  const { sendRequest, status, error, data } = useHttp(Login);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    if (status === "completed" && error === null && data) {
+      dispatch(authActions.logIn(data.value.token));
+      navigate("/user");
+    }
+  });
+
   {
     const {
       enteredValue: enteredEmail,
@@ -22,8 +34,8 @@ const LogInForm = () => {
       enteredValueIsValid: emailIsValid,
       hasError: emailError,
     } = UserForm((enteredValue) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enteredValue.trim())
-    );
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enteredValue.trim()));
+    
 
     const {
       enteredValue: enteredPassword,
@@ -34,50 +46,23 @@ const LogInForm = () => {
       hasError: passwordError,
     } = UserForm(
       (enteredValue) =>
-        13 > enteredValue.trim().length && enteredValue.trim().length > 5
-    );
+        13 > enteredValue.trim().length && enteredValue.trim().length > 5  && regex.test(enteredValue.trim()
+    ));
 
     let isFormValid = false;
     if (emailIsValid && passwordIsValid) {
       isFormValid = true;
     }
 
-    const registerUser = async (event) => {
+    const loginUser = async (event) => {
       event.preventDefault();
       if (isFormValid) {
         dispatch(navActions.changeLoading());
-
-        await fetch(url, {
-          method: "POST",
-          body: JSON.stringify({
-            email: enteredEmail,
-            password: enteredPassword,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (res.ok) {
-              return res.json();
-            } else {
-              res.json().then((data) => {
-                let errorMessage = "Athentication Failed";
-                if (data && data.error && data.error.errorMessage) {
-                  errorMessage = data.error.message;
-                }
-                alert(errorMessage);
-              });
-            }
-          })
-          .then((data) => {
-            dispatch(navActions.changeLoading());
-            dispatch(authActions.logIn(data.value.token));
-            navigate("/user");
-          })
-          .catch((err) => {
-            alert(err.message);
-          });
+        sendRequest({
+          email: enteredEmail,
+          password: enteredPassword,
+        });
+         
       }
 
       emailReset();
@@ -85,8 +70,8 @@ const LogInForm = () => {
     };
     return (
       <div className={classes.registerFormMain}>
-        <form onSubmit={registerUser}>
-          {isLoading && <LoadingSpinner />}
+        <form onSubmit={loginUser}>
+          {status === "pending" && <LoadingSpinner />}
           <div
             className={emailError ? classes.invalidControl : classes.control}
           >

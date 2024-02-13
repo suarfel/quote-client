@@ -1,10 +1,12 @@
-import LoadingSpinner from "../components/UI/LoadingSpinner";
+
+import {Fragment} from 'react';
+import UserMiddle from '../components/user/UserMiddle';
 
 const UserPage = () => {
   return (
-    <div>
-      <LoadingSpinner />
-    </div>
+    <Fragment>
+       <UserMiddle />
+    </Fragment>
   );
 };
 

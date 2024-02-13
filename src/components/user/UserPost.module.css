@@ -1,0 +1,61 @@
+.userPost {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  padding: 1rem;
+  row-gap: 1rem;
+}
+.userPostProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.userPostProfilePhoto {
+  border-radius: 50%;
+  width: 3rem;
+  overflow: hidden;
+  height: 3rem;
+}
+.userPostProfilePeriod {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+ }
+.userPostProfileName {
+  font-weight: 548;
+}
+
+.userPostProfilePhoto img {
+  width: 100%;
+  height: auto;
+}
+.userPostProfileTime {
+  color: rgba(0, 0, 0, 0.4);
+}
+.userPostReact{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+
+.userPostMain{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.userPostReact div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.6rem;
+}

@@ -19,11 +19,14 @@ const RegisterMain = () => {
     if (status === "completed" && error === null) {
       navigate("/login");
     }
+    if (status === "completed" && error !== null) {
+      navigate("/home")
+    }
   });
 
   const registerUserHandler = (user) => {
     sendRequest(user);
-  };
+    };
 
   const width = useSelector((state) => state.nav.width);
   return (
@@ -35,8 +38,7 @@ const RegisterMain = () => {
             <SignWithGoogle />
           </div>
           <div className={classes.registerForm}>
-            <RegisterForm
-              isLoading={status === "pending"}
+            <RegisterForm 
               onRegisterUser={registerUserHandler}
             />
           </div>

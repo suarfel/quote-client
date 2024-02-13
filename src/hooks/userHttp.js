@@ -1,5 +1,5 @@
 import { useReducer, useCallback } from "react";
- 
+
 const apiReducer = (state, action) => {
   if (action.type === "SEND") {
     return {
@@ -35,8 +35,8 @@ const useHttp = (requestFunction, startWithPending = false) => {
     async function (requestData) {
       dispatch({ type: "SEND" });
       try {
-         const responseData = await requestFunction(requestData);
-        dispatch({ type: "SUCCESS", responseData });
+        const responseData = await requestFunction(requestData);
+        dispatch({ type: "SUCCESS", responseData  : responseData});
       } catch (error) {
         dispatch({
           type: "ERROR",
@@ -48,7 +48,7 @@ const useHttp = (requestFunction, startWithPending = false) => {
   );
 
   return {
-    sendRequest,
+    sendRequest, 
     ...apiState,
   };
 };

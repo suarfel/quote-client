@@ -5,6 +5,7 @@ import { useState } from "react";
 import LoadingSpinner from "../UI/LoadingSpinner";
 
 const RegisterForm = (props) => {
+  const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
 
   const {
     enteredValue: enteredName,
@@ -38,7 +39,7 @@ const RegisterForm = (props) => {
     hasError: passwordError,
   } = UserForm(
     (enteredValue) =>
-      13 > enteredValue.trim().length && enteredValue.trim().length > 5
+      13 > enteredValue.trim().length && enteredValue.trim().length > 5 && regex.test(enteredValue.trim())
   );
 
   let isFormValid = false;
@@ -108,7 +109,7 @@ const RegisterForm = (props) => {
             onBlur={passwordBlurHandler}
           />
           {passwordError && (
-            <div className={classes.formError}>Please add valid password</div>
+            <div className={classes.formError}>Password include upper,lower,punc and num</div>
           )}
         </div>
         <div className={classes.signupUser}>
