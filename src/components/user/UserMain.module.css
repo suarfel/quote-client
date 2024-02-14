@@ -1,0 +1,5 @@
+.userMain{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+}

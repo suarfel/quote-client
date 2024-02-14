@@ -1,0 +1,26 @@
+.navProfile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.navProfile div {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.3rem;
+}
+.navProfile div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 90%;
+  border-radius: 5px;
+}
+.navProfileBorder {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ 
+.navProfile div a {
+  text-decoration: none;
+  color: black;
+}

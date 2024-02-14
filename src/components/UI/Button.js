@@ -6,7 +6,7 @@ const Button = (props) => {
       <button
         style={{
           height: '2rem',
-          width: '6rem',
+          width: props.width,
           borderRadius: '0.8rem',
           fontSize: '1rem',
           fontWeight: 600,

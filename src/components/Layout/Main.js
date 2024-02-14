@@ -5,11 +5,12 @@ import Layout from "./Layout";
 import classes from "./Main.module.css";
 import DropNavigation from "./DropNavigation";
 import { navActions } from "../../store/home";
+import NavProfile from "./NavProfile";
 const Main = (props) => {
   const width = useSelector((state) => state.nav.width);
 
   const isDrawing = useSelector((state) => state.nav.isHamTouched);
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const isLoading = useSelector((state) => state.nav.isLoading);
   const dispatch = useDispatch();
   const setDimenson = () => {
     dispatch(navActions.setWindow());
@@ -26,6 +27,11 @@ const Main = (props) => {
       <div className={classes.dropMain}>
         {isDrawing && width < 640 && <DropNavigation />}
       </div>
+      {isLoading && (
+        <div className={classes.dropLogout}>
+          <NavProfile />
+        </div>
+      )}
 
       <div className={classes.mainPosition}>
         <div className={classes.minPos}>{props.children}</div>

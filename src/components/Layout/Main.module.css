@@ -19,13 +19,27 @@
   top: 5rem;
   width: 100%;
   background-color: rgba(242, 247, 245, 0.8);
+
+  z-index: 1;
+}
+.dropLogout {
+  font-size: 0.9rem;
+  padding: 1rem;
+  right: 0;
+  margin-right: 2rem;
+  width: 12rem;
+  position: fixed;
+  border-radius: 12px;
+  top: 5rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: rgba(242, 247, 245, 0.8);
   z-index: 1;
 }
 
 .mainPosition {
   position: absolute;
   z-index: 0;
-  top: 10rem;
+  top: 5rem;
   width: 100%;
   min-height: 77vh;
 }

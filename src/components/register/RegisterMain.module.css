@@ -1,7 +1,8 @@
-.registerMainTop{
-  display:  flex;
+.registerMainTop {
+  display: flex;
   flex-direction: column;
   row-gap: 5rem;
+  margin-top: 3rem;
 }
 .registerMain {
   display: flex;
@@ -37,7 +38,4 @@
 }
 
 .modalOverlay {
- 
 }
-
-

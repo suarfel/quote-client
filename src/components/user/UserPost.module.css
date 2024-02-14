@@ -20,6 +20,10 @@
   overflow: hidden;
   height: 3rem;
 }
+.userPostProfilePhoto img {
+    width: 100%;
+    height: auto;
+  }
 .userPostProfilePeriod {
   display: flex;
   flex-direction: row;
@@ -34,10 +38,7 @@
   font-weight: 548;
 }
 
-.userPostProfilePhoto img {
-  width: 100%;
-  height: auto;
-}
+
 .userPostProfileTime {
   color: rgba(0, 0, 0, 0.4);
 }

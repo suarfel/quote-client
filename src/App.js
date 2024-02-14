@@ -21,12 +21,12 @@ function App() {
     <Router>
       <Main>
         <Routes>
-          {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
-          {isLoggedIn && <Route path="/user" element={<UserPage />} />}
+          
+          {!isLoggedIn && <Route path="/login" element={<SignInPage />} />}
           {!isLoggedIn && <Route path="/register" element={<SignUpPage />} />}
           {!isLoggedIn && <Route path="home" element={<LandingPage />} />}
-          {!isLoggedIn && <Route path="/login" element={<SignInPage />} />}
           {isLoggedIn && <Route path="/user" element={<UserPage />} />}
+          {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
           {!isLoggedIn && (
             <Route path="*" element={<Navigate replace to="home" />} />
           )}

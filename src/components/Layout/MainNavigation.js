@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Logo from "./Logo";
 import AuthButtons from "./AuthButtons";
 import { useSelector } from "react-redux";
+import ProfileStatus from "./ProfileStatus";
 const MainNavigation = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
@@ -58,6 +59,7 @@ const MainNavigation = () => {
         </nav>
       )}
       {!isLoggedIn && <AuthButtons />}
+      {isLoggedIn && <ProfileStatus />}
     </div>
   );
 };

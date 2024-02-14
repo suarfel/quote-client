@@ -9,8 +9,6 @@ import useHttp from "../../hooks/userHttp";
 import { Login } from "../../api/authApi";
 import { useEffect } from "react";
 
-const url = "http://localhost:5181/api/auth/login";
-
 const LogInForm = () => {
   const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
 
@@ -57,7 +55,6 @@ const LogInForm = () => {
     const loginUser = async (event) => {
       event.preventDefault();
       if (isFormValid) {
-        dispatch(navActions.changeLoading());
         sendRequest({
           email: enteredEmail,
           password: enteredPassword,

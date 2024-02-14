@@ -7,6 +7,7 @@ import React, { useEffect } from "react";
 import DropNavigation from "./DropNavigation";
 import Logo from "./Logo";
 import Footer from "./Footer";
+import ProfileStatus from "./ProfileStatus";
 
 const Layout = () => {
   const width = useSelector((state) => state.nav.width);
@@ -28,6 +29,7 @@ const Layout = () => {
         <div className={classes.layoutHam}>
           <Logo />
           {!isLoggedIn && <NavBar />}
+          {isLoggedIn && <ProfileStatus />}
         </div>
       )}
     </div>
