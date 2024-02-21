@@ -1,5 +1,25 @@
-.userMain{
-    display: flex;
-    flex-direction: row;
-    column-gap: 5rem;
+.userMain {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5rem;
+  background-color:rgb(232, 226, 226,0.2);
+  
+}
+
+.userMainLeft {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.05);
+  row-gap: 5rem;
+  width: 20rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  max-height: fit-content;
+  z-index: 3;
+
+}
+
+.userMainRight{
+  margin-bottom: 5rem;
 }

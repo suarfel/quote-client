@@ -35,7 +35,7 @@ const posts = [
   },
   {
     userName: "Tamru Aleke",
-    post: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autemexercitationem tenetur praesentium in delectus sed amet at sint impedititaque cumque perferendis id, cupiditate quam, a voluptates voluptatemratione nisi?",
+    post: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autemexercitationem tenetur praesentium in delectus sed amet at sint impedititaque cumque perferendis id, cupiditate quam, a voluptates voluptatemratione nisi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autemexercitationem tenetur praesentium in delectus sed amet at sint impedititaque cumque perferendis id, cupiditate quam, a voluptates voluptatemratione nisi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Autemexercitationem tenetur praesentium in delectus sed amet at sint impedititaque cumque perferendis id, cupiditate quam, a voluptates voluptatemratione nisi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autemexercitationem tenetur praesentium in delectus sed amet at sint impedititaque cumque perferendis id, cupiditate quam, a voluptates voluptatemratione nisi?",
     likes: "1.1k",
     time: "2h",
     shares: "2",

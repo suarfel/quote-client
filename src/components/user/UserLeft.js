@@ -23,10 +23,7 @@ const UserLeft = () => {
       <div>
         <FaRegBookmark /> Bookmarks
       </div>
-      <div style={{ width: "10rem" }}>
-        <Button title="Create Post" width="10rem" />
-      </div>
-      <div></div>
+      <Button title="Create Post" width="10rem" />
     </div>
   );
 };

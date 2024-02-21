@@ -1,0 +1,58 @@
+.userToFollow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.5rem;
+  height: 3.5rem;
+  padding-right: 0.5rem;
+  width: 18rem;
+}
+.userToFollowMain {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+.userToFollowMainPhoto {
+  border-radius: 50%;
+  width: 2.5rem;
+  overflow: hidden;
+  height: 2.5rem;
+}
+.userToFollowMainPhoto img {
+  width: 100%;
+  height: auto;
+}
+
+.navProfilePhoto {
+  border-radius: 50%;
+  width: 3rem;
+  overflow: hidden;
+  height: 3rem;
+}
+.navProfilePhoto img {
+  width: 100%;
+  height: auto;
+}
+
+.userToFollowDescriptionFirst{
+  font-size: 14px;
+  font-weight: 600;
+}
+.userToFollowDescriptionSecond{
+  font-size: 14px;
+  color: rgba(0, 0, 0,0.5 );
+}
+.userToFollowFollow{
+  background-color: rgb(232, 226, 226);
+  padding: 0.3rem;
+  border-radius: 6px;
+  font-size: 14px;
+
+}
+.userToFollowFollow:hover{
+  background-color: rgb(232, 226, 226,0.3);
+  cursor: pointer;
+  
+}
+
