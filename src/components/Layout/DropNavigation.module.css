@@ -21,17 +21,14 @@
 .nav a {
   text-decoration: none;
   color: black;
-  font-weight: 400;
+  font-weight: 600;
 }
 
-.nav li:hover,
-.nav li:active,
-.nav li.active {
-  color: #3fa26d;
-  padding-bottom: 0.25rem;
-  border-bottom: 3px solid #048942;
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  color: #048942;
 }
-
 
 .mainNavigationButtons {
   display: flex;

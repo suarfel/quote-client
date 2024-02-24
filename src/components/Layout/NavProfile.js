@@ -3,13 +3,16 @@ import classes from "./NavProfile.module.css";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import { navActions } from "../../store/home";
+import { userActions } from "../../store/user";
 
 const NavProfile = () => {
   const dispatch = useDispatch();
 
   const onLogout = () => {
     dispatch(authActions.logOut());
+    dispatch(userActions.removeUsername());
     dispatch(navActions.changeLoading());
+    dispatch(userActions.removeEmial());
   };
   return (
     <div className={classes.navProfile}>

@@ -8,9 +8,12 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 import useHttp from "../../hooks/userHttp";
 import { Login } from "../../api/authApi";
 import { useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
+import { userActions } from "../../store/user";
 
 const LogInForm = () => {
-  const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
+  const regex =
+    /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
 
   const { sendRequest, status, error, data } = useHttp(Login);
   const dispatch = useDispatch();
@@ -19,7 +22,10 @@ const LogInForm = () => {
   useEffect(() => {
     if (status === "completed" && error === null && data) {
       dispatch(authActions.logIn(data.value.token));
-      navigate("/user");
+      const decodeToken = jwtDecode(data.value.token);
+      dispatch(userActions.setUsername(decodeToken.sub));
+      dispatch(userActions.setEmail(decodeToken.email));
+      navigate(`/user/${decodeToken.email}`);
     }
   });
 
@@ -32,8 +38,8 @@ const LogInForm = () => {
       enteredValueIsValid: emailIsValid,
       hasError: emailError,
     } = UserForm((enteredValue) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enteredValue.trim()));
-    
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enteredValue.trim())
+    );
 
     const {
       enteredValue: enteredPassword,
@@ -44,8 +50,10 @@ const LogInForm = () => {
       hasError: passwordError,
     } = UserForm(
       (enteredValue) =>
-        13 > enteredValue.trim().length && enteredValue.trim().length > 5  && regex.test(enteredValue.trim()
-    ));
+        13 > enteredValue.trim().length &&
+        enteredValue.trim().length > 5 &&
+        regex.test(enteredValue.trim())
+    );
 
     let isFormValid = false;
     if (emailIsValid && passwordIsValid) {
@@ -59,7 +67,6 @@ const LogInForm = () => {
           email: enteredEmail,
           password: enteredPassword,
         });
-         
       }
 
       emailReset();

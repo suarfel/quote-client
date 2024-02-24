@@ -1,10 +1,12 @@
 .userPost {
   display: flex;
   flex-direction: column;
-  width: 40rem;
+  flex-wrap: wrap;
+  max-width: 45rem;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
   margin: 2rem;
+  
   padding: 1rem;
   row-gap: 1rem;
 }
@@ -60,4 +62,10 @@
     justify-content: center;
     align-items: center;
     column-gap: 0.6rem;
+}
+
+@media(max-width: 1000px){
+  .userPost {
+    max-width: 30rem;
+  }
 }

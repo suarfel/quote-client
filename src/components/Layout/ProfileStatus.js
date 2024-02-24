@@ -6,6 +6,7 @@ import { navActions } from "../../store/home";
 
 const ProfileStatus = () => {
   const isLoading = useSelector((state) => state.nav.isLoading);
+  const userName = useSelector((state) => state.user.userName);
   const dispatch = useDispatch();
 
   const onDropDown = () => {
@@ -16,7 +17,7 @@ const ProfileStatus = () => {
       <div className={classes.navProfilePhoto}>
         <img src={myPhoto} />
       </div>
-      <div className={classes.navProfileUserName}>Surafel Getahun</div>
+      <div className={classes.navProfileUserName}>{userName}</div>
       <div className={classes.navProfileDrop}>
         <IoIosArrowDropdown />
       </div>

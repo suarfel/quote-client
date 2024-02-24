@@ -7,14 +7,21 @@
 .userLeft div {
   display: flex;
   flex-direction: row;
-  column-gap: 0.8rem;
+  column-gap: 0.5rem;
   font-size: 1rem;
   height: 2rem;
   align-items: center;
   padding-left: 0.3rem;
   font-weight: 600;
 }
-.userLeft div:hover {
+
+.userLeft a {
+  text-decoration: none;
+  color: black;
+}
+.userLeft a:hover,
+.userLeft a:active,
+.userLeft a.active {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   width: 80%;
@@ -35,4 +42,11 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .userLeft div {
+    height: 2.3rem;
+    padding: 0.2rem;
+  }
 }

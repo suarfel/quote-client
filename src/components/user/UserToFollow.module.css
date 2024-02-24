@@ -1,16 +1,18 @@
 .userToFollow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   column-gap: 0.5rem;
   height: 3.5rem;
   padding-right: 0.5rem;
-  width: 18rem;
+  max-width: 18rem;
 }
 .userToFollowMain {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   column-gap: 0.5rem;
 }
 .userToFollowMainPhoto {
@@ -35,24 +37,38 @@
   height: auto;
 }
 
-.userToFollowDescriptionFirst{
+.userToFollowDescriptionFirst {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
   font-weight: 600;
 }
-.userToFollowDescriptionSecond{
+.userToFollowDescriptionSecond {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
-  color: rgba(0, 0, 0,0.5 );
+  color: rgba(0, 0, 0, 0.5);
 }
-.userToFollowFollow{
+.userToFollowFollow {
   background-color: rgb(232, 226, 226);
   padding: 0.3rem;
   border-radius: 6px;
   font-size: 14px;
-
 }
-.userToFollowFollow:hover{
-  background-color: rgb(232, 226, 226,0.3);
+.userToFollowFollow:hover {
+  background-color: rgb(232, 226, 226, 0.3);
   cursor: pointer;
-  
 }
 
+@media (max-width: 1180px) {
+  .userToFollow {
+    flex-wrap: wrap;
+    max-width: 14rem;
+  }
+}
+
+@media(max-width : 700px){
+  .userToFollow {
+    max-width: 30rem;
+  }
+}
