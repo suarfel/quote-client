@@ -1,8 +1,6 @@
 
 .layoutHam{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: none;
     
 }
 .Layout{
@@ -17,3 +15,14 @@
       color:  white;
     }
   }
+
+@media ( max-width: 640px ){
+  .layoutHam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .layoutHamMain{
+    display: none;
+  }
+}

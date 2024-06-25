@@ -3,7 +3,6 @@
   flex-direction: column;
   row-gap: 5rem;
   margin-top: 3rem;
-
 }
 .logInMain {
   display: flex;
@@ -30,4 +29,24 @@
   text-decoration: none;
   color: #0fa958;
   font-weight: bold;
+}
+.logInMainLeft img {
+  width: 30rem;
+}
+
+@media (max-width: 500px) {
+  .logInMainLeft img {
+    width: 25rem;
+  }
+}
+@media (max-width: 420px) {
+  .logInMainLeft img {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .logInMainLeft img {
+    width: 17rem;
+  }
 }

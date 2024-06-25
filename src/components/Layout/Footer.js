@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from 'react-icons/fa';
 const Footer = () => {
-  const width = useSelector((state) => state.nav.width);
-  const iconStyle = {
+   const iconStyle = {
     margin: '0px',
     color: 'black', // Change the color to white
     fontSize: '28px',

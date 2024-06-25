@@ -15,23 +15,37 @@ const Layout = () => {
   const dispatch = useDispatch();
   const isDrawing = useSelector((state) => state.nav.isHamTouched);
 
-  const setDimenson = () => {
-    dispatch(navActions.setWindow());
-  };
-  useEffect(() => {
-    window.addEventListener("resize", setDimenson);
-  }, [width]);
+  // useEffect(() => {
+  //   const setDimenson = () => {
+  //     dispatch(navActions.setWindow());
+  //   };
+  //   window.addEventListener("resize", setDimenson);
+
+  //   return () => {
+  //     window.removeEventListener("resize", setDimenson);
+  //   };
+  // }, []);
 
   return (
+    // <div className={classes.Layout}>
+    //   {width > 640 && <MainNavigation />}
+    //   {width <= 640 && (
+    //     <div className={classes.layoutHam}>
+    //       <Logo />
+    //       {!isLoggedIn && <NavBar />}
+    //       {isLoggedIn && <ProfileStatus />}
+    //     </div>
+    //   )}
+    // </div>
     <div className={classes.Layout}>
-      {width >= 640 && <MainNavigation />}
-      {width < 640 && (
-        <div className={classes.layoutHam}>
-          <Logo />
-          {!isLoggedIn && <NavBar />}
-          {isLoggedIn && <ProfileStatus />}
-        </div>
-      )}
+      <div className={classes.layoutHamMain}>
+        <MainNavigation />
+      </div>
+      <div className={classes.layoutHam}>
+        <Logo />
+        {!isLoggedIn && <NavBar />}
+        {isLoggedIn && <ProfileStatus />}
+      </div>
     </div>
   );
 };

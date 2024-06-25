@@ -12,6 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import { userActions } from "../../store/user";
 
 const LogInForm = () => {
+  console.log("login form is not working");
   const regex =
     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~])/;
 
@@ -23,7 +24,8 @@ const LogInForm = () => {
     if (status === "completed" && error === null && data) {
       dispatch(authActions.logIn(data.value.token));
       const decodeToken = jwtDecode(data.value.token);
-      dispatch(userActions.setUsername(decodeToken.sub));
+      dispatch(userActions.setUsername(decodeToken.sid));
+      dispatch(userActions.setUserId(decodeToken.sub));
       dispatch(userActions.setEmail(decodeToken.email));
       navigate(`/user/${decodeToken.email}`);
     }

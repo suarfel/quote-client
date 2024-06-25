@@ -3,7 +3,7 @@ import login from "../../images/login.png";
 import { NavLink } from "react-router-dom";
 import SignWithGoogle from "./SignWithGoogle";
 import RegisterForm from "./RegisterForm";
-import {useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Register } from "../../api/authApi";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -20,15 +20,14 @@ const RegisterMain = () => {
       navigate("/login");
     }
     if (status === "completed" && error !== null) {
-      navigate("/home")
+      navigate("/home");
     }
   });
 
   const registerUserHandler = (user) => {
     sendRequest(user);
-    };
+  };
 
-  const width = useSelector((state) => state.nav.width);
   return (
     <div className={classes.registerMainTop}>
       <div className={classes.registerMain}>
@@ -38,25 +37,15 @@ const RegisterMain = () => {
             <SignWithGoogle />
           </div>
           <div className={classes.registerForm}>
-            <RegisterForm 
-              onRegisterUser={registerUserHandler}
-            />
+            <RegisterForm onRegisterUser={registerUserHandler} />
           </div>
           <div className={classes.haveAccount}>
             Already have an accout? <NavLink to="/login">Login</NavLink>
           </div>
-
           {status === "pending" && <LoadingSpinner />}
         </div>
-        <div className={classes.registerImage}>
-          {width > 500 && <img src={login} style={{ width: "30rem" }} />}
-          {width <= 420 && width > 340 && (
-            <img src={login} style={{ width: "20rem" }}  />
-          )}
-          {width <= 500 && width > 420 && (
-            <img src={login} style={{ width: "25rem" }}  />
-          )}
-          {width <= 340 && <img src={login} style={{ width: "17rem" }}  />}
+        <div className={classes.registerMainLeft}>
+          <img src={login} />
         </div>
       </div>
       <LandingMain />

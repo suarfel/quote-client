@@ -2,19 +2,20 @@ import UserLeft from "./UserLeft";
 import classes from "./UserMain.module.css";
 import UserMiddle from "./UserMiddle";
 import UserRight from "./UserRight";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-const UserMain = () => {
 
-  
-  const width = useSelector((state) => state.nav.width);
+const UserMain = () => {
   return (
     <div className={classes.userMain}>
       <div className={classes.userMainLeft}>
         <UserLeft />
-        {width > 700 && <UserRight/> }
+        <div className={classes.userMainLeftRight}>
+          <UserRight />
+        </div>
       </div>
       <div className={classes.userMainRight}>
-        {width <= 700 && <UserRight/> }
+        <div className={classes.userMainRightLeft}>
+          <UserRight />
+        </div>
         <UserMiddle />
       </div>
     </div>

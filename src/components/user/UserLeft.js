@@ -4,30 +4,22 @@ import { IoHomeOutline } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaRegMessage } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa";
-import { useSelector } from "react-redux";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 const UserLeft = () => {
-  const width = useSelector((state) => state.nav.width);
-  let size = "5rem";
-  
-  if (width <= 600) {
-    size = "2rem";
-    
-  } else {
-    size = "1.5rem";
-  }
+  let size = "2rem";
+
   return (
     <div className={classes.userLeft}>
       <NavLink
         to="/user"
         className={({ isActive }) => (isActive ? classes.active : undefined)}
       >
-        <div>
+        <div className={classes.userLeftIcons}>
           <IoHomeOutline style={{ fontSize: size, color: "0fa958" }} />
 
-          {width > 600 && <div>Home</div>}
+          <div>Home</div>
         </div>
       </NavLink>
 
@@ -35,11 +27,11 @@ const UserLeft = () => {
         to="/notifications"
         className={({ isActive }) => (isActive ? classes.active : undefined)}
       >
-        <div>
+        <div className={classes.userLeftIcons}>
           <IoMdNotificationsOutline
             style={{ fontSize: size, color: "0fa958" }}
           />
-          {width > 600 && <div>Notifications</div>}
+          <div>Notifications</div>
         </div>
       </NavLink>
 
@@ -47,9 +39,9 @@ const UserLeft = () => {
         to="/messages"
         className={({ isActive }) => (isActive ? classes.active : undefined)}
       >
-        <div>
+        <div className={classes.userLeftIcons}>
           <FaRegMessage style={{ fontSize: size, color: "0fa958" }} />
-          {width > 600 && <div>Messages</div>}
+          <div>Messages</div>
         </div>
       </NavLink>
 
@@ -57,26 +49,23 @@ const UserLeft = () => {
         to="/bookmarks"
         className={({ isActive }) => (isActive ? classes.active : undefined)}
       >
-        <div>
+        <div className={classes.userLeftIcons}>
           <FaRegBookmark style={{ fontSize: size, color: "0fa958" }} />
-          {width > 600 && <div>Bookmarks</div>}
+          <div>Bookmarks</div>
         </div>
       </NavLink>
+      
+      <div className={classes.userLeftIcons}>
+        <div>
+          <Button title="Create Post" width="10rem" />
+        </div>
+      </div>
 
-      {width > 600 && <Button title="Create Post" width="10rem" />}
-
-      {width <= 600 && (
-        <NavLink
+      <NavLink
         to="/createPost"
-          className={({ isActive }) => (isActive ? classes.active : undefined)}
-        >
-          <div>
-            <MdOutlineCreateNewFolder
-              style={{ fontSize: size, color: "0fa958" }}
-            />
-          </div>
-        </NavLink>
-      )}
+        className={({ isActive }) => (isActive ? classes.active : undefined)}
+      >
+      </NavLink>
     </div>
   );
 };

@@ -18,10 +18,11 @@ import NotificationsPage from "./pages/NotificationsPage";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const userEmail= useSelector((state) => state.user.email);
-  const userId = userEmail.split('@')[0];
-
-
+  const userEmail = useSelector((state) => state.user.email);
+  let userId = "";
+  if (userEmail) {
+    userId = userEmail.split("@")[0];
+  }
   return (
     <Router>
       <Main>
@@ -29,7 +30,9 @@ function App() {
           {!isLoggedIn && <Route path="/login" element={<SignInPage />} />}
           {!isLoggedIn && <Route path="/register" element={<SignUpPage />} />}
           {!isLoggedIn && <Route path="home" element={<LandingPage />} />}
-          {isLoggedIn && <Route path={`user/${userId}`} element={<UserPage />} />}
+          {isLoggedIn && (
+            <Route path={`user/${userId}`} element={<UserPage />} />
+          )}
           {isLoggedIn && (
             <Route path="/notifications" element={<NotificationsPage />} />
           )}
@@ -38,7 +41,10 @@ function App() {
             <Route path="*" element={<Navigate replace to="home" />} />
           )}
           {isLoggedIn && (
-            <Route path="*" element={<Navigate replace to={`user/${userId}`} />} />
+            <Route
+              path="*"
+              element={<Navigate replace to={`user/${userId}`} />}
+            />
           )}
         </Routes>
       </Main>

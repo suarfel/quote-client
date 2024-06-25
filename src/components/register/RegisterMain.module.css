@@ -36,6 +36,25 @@
 .haveAccount a:hover {
   color: #87c6a4;
 }
+ 
 
-/* .modalOverlay {
-} */
+.registerMainLeft img {
+  width: 30rem;
+}
+
+@media (max-width: 500px) {
+  .registerMainLeft img {
+    width: 25rem;
+  }
+}
+@media (max-width: 420px) {
+  .registerMainLeft img {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .registerMainLeft img {
+    width: 17rem;
+  }
+}

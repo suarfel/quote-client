@@ -63,7 +63,6 @@
     align-items: center;
     column-gap: 0.6rem;
 }
-
 @media(max-width: 1000px){
   .userPost {
     max-width: 30rem;

@@ -7,7 +7,6 @@ import LandingDescription from "../landing/LandingDescription";
 import LandingMain from "../landing/LandingMain";
 
 const LogInMain = () => {
-  const width = useSelector((state) => state.nav.width);
   return (
     <div className={classes.logInMainTop}>
       <div className={classes.logInMain}>
@@ -21,14 +20,7 @@ const LogInMain = () => {
           </div>
         </div>
         <div className={classes.logInMainLeft}>
-          {width > 500 && <img src={login} style={{ width: "30rem" }} />}
-          {width <= 420 && width > 340 && (
-            <img src={login} style={{ width: "20rem" }} />
-          )}
-          {width <= 500 && width > 420 && (
-            <img src={login} style={{ width: "25rem" }} />
-          )}
-          {width <= 340 && <img src={login} style={{ width: "17rem" }} />}
+          <img src={login} />
         </div>
       </div>
       <LandingMain />

@@ -1,7 +1,7 @@
 .landingMain{
     display: flex;
     flex-direction: column;
-    row-gap: 5rem;
+    row-gap: 4rem;
     margin-top: 3rem;
     margin-bottom: 10rem;
 }
@@ -37,6 +37,7 @@
 .landingDescriptionTwoTitle{
     font-size: 1.7rem;
     font-weight: 500;
+    margin-bottom: 1rem;
 }
 .landingDescriptionTwoParagraph{
     flex-basis: 70%;

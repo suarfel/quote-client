@@ -2,7 +2,7 @@ import classes from "./Button.module.css";
 
 const Button = (props) => {
   return (
-    <span className={classes.reuseButton}>
+    <div className={classes.reuseButton}>
       <button
         style={{
           height: '2rem',
@@ -14,7 +14,7 @@ const Button = (props) => {
       >
         {props.title}
       </button>
-    </span>
+    </div>
   );
 };
 

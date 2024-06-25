@@ -18,6 +18,8 @@
 
 .userMainRight {
   margin-bottom: 5rem;
+  flex-grow: 1
+  ;
 }
 @media (max-width: 1180px) {
   .userMainLeft {
@@ -61,4 +63,16 @@
  }
 }
 
+.userMainRightLeft{
+  display: none;
+}
 
+
+@media(max-width : 700px){
+  .userMainLeftRight{
+    display: none;
+  }
+  .userMainRightLeft{
+    display:flex;
+  }
+}

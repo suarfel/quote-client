@@ -1,10 +1,7 @@
 import classes from "./UserRight.module.css";
 import { useEffect, useState } from "react";
 import UserToFollow from "./UserToFollow";
-import Button from "../UI/Button";
-{
-  /* <Button title="Show more" width="7rem"></Button> */
-}
+
 let users = [1, 2, 3];
 const UserRight = () => {
   const [st, setSt] = useState(false);
@@ -25,9 +22,6 @@ const UserRight = () => {
           <div>Show more</div>
         </div>
       </div>
-      {/* <div className={classes.userRightShowMore} onClick={onListUsers}>
-        Show more
-      </div> */}
     </div>
   );
 };
