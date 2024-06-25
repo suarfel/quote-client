@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { eraseCookie, getCookie, setCookie } from "../services/cookies";
 
-const initailToken = localStorage.getItem("token");
+const initailToken = getCookie("token");
+console.log(initailToken);
+
 
 const initialAuthState = {
   token: initailToken,
@@ -14,12 +17,14 @@ const authReducer = createSlice({
     logIn(state, action) {
       state.token = action.payload;
       state.isLoggedIn = !!action.payload;
-      localStorage.setItem("token", action.payload);
+      setCookie("token", action.payload,3);
     },
     logOut(state) {
       state.token = null;
       state.isLoggedIn = false;
-      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("username");
+      eraseCookie("token");
     },
   },
 });

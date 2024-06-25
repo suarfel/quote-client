@@ -23,6 +23,7 @@ const LogInForm = () => {
   useEffect(() => {
     if (status === "completed" && error === null && data) {
       dispatch(authActions.logIn(data.value.token));
+      console.log(data.value.token);
       const decodeToken = jwtDecode(data.value.token);
       dispatch(userActions.setUsername(decodeToken.sid));
       dispatch(userActions.setUserId(decodeToken.sub));
