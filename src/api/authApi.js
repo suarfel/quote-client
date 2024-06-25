@@ -1,12 +1,12 @@
-import axios from "./axios";
 import { useDispatch } from "react-redux";
 import { navActions } from "../store/home";
 import { API } from "../environment";
+import { getCookie } from "../services/cookies";
 
 const DOMAIN_URL = "/api/auth/register";
 const url = "http://localhost:5181/api/auth/register";
-const token = localStorage.getItem("token");
-
+const token = getCookie("token");
+console.log(token);
 export async function Register(userData) {
   console.log(userData);
   const response = await fetch(url, {
@@ -46,7 +46,7 @@ export const AllQuotes = async () => {
   const response = await fetch(`${API}api/Quote/AllWithTimeOrder`, {
     method: "GET",
     headers: {
-      Authorization: `bearer ${localStorage.getItem("token")}`,
+      Authorization: `bearer ${getCookie("token")}`,
       "Content-Type": "application/json",
     },
   });
@@ -65,7 +65,7 @@ export const LikeQuote = async (likeData) => {
     method: "POST",
     body: JSON.stringify(likeData),
     headers: {
-      Authorization: `bearer ${localStorage.getItem("token")}`,
+      Authorization: `bearer ${getCookie("token")}`,
       "Content-Type": "application/json",
     },
   });
@@ -83,7 +83,7 @@ export const DislikeQuote = async (dislikeData) => {
   const response = await fetch(`${API}api/Like/remove/${dislikeData.id}`, {
     method: "DELETE",
     headers: {
-      Authorization: `bearer ${localStorage.getItem("token")}`,
+      Authorization: `bearer ${getCookie("token")}`,
       "Content-Type": "application/json",
     },
   });
@@ -97,7 +97,7 @@ export const QuoteDetail = async (quoteId) => {
   const response = await fetch(`${API}api/Quote/${quoteId}`, {
     method: "GET",
     headers: {
-      Authorization: `bearer ${localStorage.getItem("token")}`,
+      Authorization: `bearer ${getCookie("token")}`,
       "Content-Type": "application/json",
     },
   });
